@@ -1,0 +1,1229 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sunday Assignments | Light of Life Church</title>
+
+<!-- GOOGLE FONTS -->
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400&family=League+Spartan:wght@700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* ================================
+   MAIN SETTINGS
+================================ */
+
+:root {
+  --green: #558D5E;
+  --forest: #193E2C;
+  --cream: #FFF9EF;
+  --gold: #EAD99A;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--forest);
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ================================
+   ANIMATED GREEN HERO
+================================ */
+
+.hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  color: var(--cream);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 15%,
+      rgba(190,240,199,.35),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 82% 72%,
+      rgba(141,205,159,.35),
+      transparent 45%
+    ),
+    linear-gradient(
+      140deg,
+      #71A67B 0%,
+      #558D5E 22%,
+      #244F38 46%,
+      #447D54 67%,
+      #173A2A 100%
+    );
+
+  background-size: 150% 150%;
+  animation: greenGradient 22s ease-in-out infinite;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 8% -20%;
+  pointer-events: none;
+
+  background: linear-gradient(
+    165deg,
+    transparent 10%,
+    rgba(225,255,224,.18) 25%,
+    transparent 38%,
+    rgba(12,48,31,.32) 52%,
+    transparent 66%,
+    rgba(192,238,206,.16) 78%,
+    transparent 92%
+  );
+
+  filter: blur(50px);
+  animation: greenWaves 16s ease-in-out infinite alternate;
+}
+
+/* ================================
+   HEADER AND CHURCH LOGO
+================================ */
+
+.header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  padding: 45px 6%;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  display: block;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.brand-text {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  color: var(--cream);
+  font-size: 27px;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.brand-text strong {
+  background: var(--cream);
+  color: #386A43;
+  padding: 9px 15px;
+  border-radius: 50px;
+}
+
+/* ================================
+   BIG SUNDAY TITLE
+================================ */
+
+.hero-center {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+  padding: 50px 5% 80px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  margin-bottom: 26px;
+}
+
+.sunday-title {
+  font-family:
+    Futura,
+    "Futura PT",
+    "League Spartan",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(80px, 15vw, 225px);
+  font-weight: 900;
+  line-height: .95;
+  letter-spacing: .035em;
+  text-transform: uppercase;
+
+  color: var(--cream);
+  margin: 0;
+
+  animation: fadeUp 1.3s ease both;
+}
+
+/* SCROLL INSTRUCTION */
+
+.scroll-label {
+  position: relative;
+  z-index: 2;
+
+  text-align: center;
+  padding: 0 20px 38px;
+
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  line-height: 1.6;
+}
+
+.scroll-label a {
+  display: inline-block;
+  transition: transform .25s ease;
+}
+
+.scroll-label a:hover {
+  transform: translateY(4px);
+}
+
+/* ================================
+   SUNDAY SCHEDULE SECTION
+================================ */
+
+.schedule {
+  background: var(--cream);
+  padding: 90px 5% 115px;
+}
+
+.schedule-wrap {
+  max-width: 950px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-label {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  color: var(--green);
+}
+
+/* ELEGANT SUNDAY ASSIGNMENTS FONT */
+
+.section-heading h2 {
+  font-family:
+    "Cormorant Garamond",
+    Georgia,
+    serif;
+
+  font-size: clamp(52px, 7.5vw, 100px);
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.05;
+  text-transform: uppercase;
+
+  color: var(--forest);
+  margin: 16px 0 18px;
+}
+
+.section-heading p {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #617466;
+}
+
+/* ================================
+   MONTH NAVIGATION
+================================ */
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 20px;
+  margin-bottom: 45px;
+}
+
+.month-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+
+  border: 1px solid #CEDDCE;
+  background: white;
+  color: var(--forest);
+  font-size: 25px;
+
+  transition: background .2s ease;
+}
+
+.month-btn:hover {
+  background: #E5F0E6;
+}
+
+.month-label {
+  min-width: 230px;
+  text-align: center;
+  font-size: 23px;
+  font-weight: 700;
+  color: var(--forest);
+}
+
+/* ================================
+   ACCORDION DATES
+================================ */
+
+.accordion {
+  border-top: 1.5px solid #467456;
+}
+
+.sunday-item {
+  border-bottom: 1.5px solid #467456;
+}
+
+.sunday-trigger {
+  width: 100%;
+  border: none;
+  background: transparent;
+
+  padding: 24px 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+  text-align: left;
+  color: var(--forest);
+
+  transition: background .2s ease;
+}
+
+.sunday-trigger:hover {
+  background: rgba(85,141,94,.07);
+}
+
+.date-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.sunday-number {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--green);
+  text-transform: uppercase;
+}
+
+.sunday-date {
+  font-size: clamp(18px, 2.5vw, 25px);
+  font-weight: 800;
+}
+
+.toggle-symbol {
+  font-size: 28px;
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+/* ================================
+   EXPANDED ASSIGNMENTS
+================================ */
+
+.sunday-panel {
+  padding: 0 12px 26px;
+  animation: panelFade .25s ease;
+}
+
+.sunday-panel[hidden] {
+  display: none !important;
+}
+
+.assignment {
+  display: grid;
+  grid-template-columns: 45% 55%;
+  gap: 15px;
+
+  padding: 15px 0;
+  border-bottom: 1px solid #DFE5DB;
+}
+
+.assignment:last-child {
+  border-bottom: none;
+}
+
+.role {
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.person {
+  text-align: right;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--forest);
+  overflow-wrap: anywhere;
+}
+
+.unassigned {
+  color: #87998C;
+  font-weight: 400;
+  line-height: 1.7;
+}
+
+.schedule-note {
+  text-align: center;
+  margin-top: 35px;
+  color: #718074;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer {
+  background: #193E2C;
+  color: var(--cream);
+
+  padding: 30px 15px;
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes greenGradient {
+  0%,100% {
+    background-position: 0% 20%;
+  }
+
+  50% {
+    background-position: 100% 80%;
+  }
+}
+
+@keyframes greenWaves {
+  from {
+    transform: rotate(-7deg) translateX(-2%);
+  }
+
+  to {
+    transform: rotate(-3deg) translateX(3%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes panelFade {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+
+  .header {
+    padding: 28px 5%;
+  }
+
+  .logo {
+    width: 52px;
+    height: 52px;
+  }
+
+  .brand-text {
+    font-size: 19px;
+    gap: 6px;
+  }
+
+  .brand-text strong {
+    padding: 6px 10px;
+  }
+
+  .hero-center {
+    padding: 40px 5% 65px;
+  }
+
+  .eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .sunday-title {
+    font-size: clamp(54px, 14vw, 108px);
+  }
+
+  .scroll-label {
+    font-size: 14px;
+    padding-bottom: 28px;
+  }
+
+  .schedule {
+    padding: 65px 5%;
+  }
+
+  .section-label {
+    font-size: 16px;
+  }
+
+  .section-heading h2 {
+    font-size: clamp(42px, 10vw, 64px);
+  }
+
+  .month-selector {
+    gap: 10px;
+  }
+
+  .month-label {
+    min-width: 175px;
+    font-size: 18px;
+  }
+
+  .sunday-trigger {
+    padding: 20px 6px;
+  }
+
+  .date-group {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .sunday-panel {
+    padding: 0 6px 22px;
+  }
+
+  .assignment {
+    grid-template-columns: 44% 56%;
+    gap: 6px;
+  }
+
+  .role {
+    font-size: 11px;
+  }
+
+  .person {
+    font-size: 13px;
+  }
+}
+
+/* ACCESSIBILITY */
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================================
+     SUNDAY HERO
+================================ -->
+
+<section class="hero">
+
+  <!-- CLICKABLE CHURCH LOGO -->
+
+  <header class="header">
+
+    <a
+      href="./index.html"
+      class="brand"
+      title="Return to Homepage"
+      aria-label="Return to Homepage"
+    >
+
+      <img
+        class="logo"
+        src="https://assets.cdn.filesafe.space/hDZZTUA89a5X4yE79AnS/media/6ae4a8b1736386d0dc75b141.jpg"
+        alt="Light of Life Church Logo"
+      >
+
+      <span class="brand-text">
+        <span>Light of</span>
+        <strong>Life Church</strong>
+      </span>
+
+    </a>
+
+  </header>
+
+  <!-- SUNDAY TITLE -->
+
+  <div class="hero-center">
+
+    <div class="eyebrow">
+      GATHER • WORSHIP • SERVE
+    </div>
+
+    <h1 class="sunday-title">
+      SUNDAY
+    </h1>
+
+  </div>
+
+  <!-- SCROLL BUTTON -->
+
+  <div class="scroll-label">
+
+    <a href="#sunday-schedule">
+      SCROLL TO VIEW SERVICE ASSIGNMENTS ↓
+    </a>
+
+  </div>
+
+</section>
+
+<!-- ================================
+     MONTHLY SUNDAY ASSIGNMENTS
+================================ -->
+
+<section
+  class="schedule"
+  id="sunday-schedule"
+>
+
+  <div class="schedule-wrap">
+
+    <div class="section-heading">
+
+      <div class="section-label">
+        CHURCH SERVICE SCHEDULE
+      </div>
+
+      <h2>
+        SUNDAY ASSIGNMENTS
+      </h2>
+
+      <p>
+        Select a Sunday to view
+        the assigned church workers.
+      </p>
+
+    </div>
+
+    <!-- MONTH SELECTOR -->
+
+    <div class="month-selector">
+
+      <button
+        class="month-btn"
+        id="prevMonth"
+        type="button"
+        aria-label="Previous month"
+      >
+        &#8249;
+      </button>
+
+      <div
+        class="month-label"
+        id="monthLabel"
+        aria-live="polite"
+      >
+        Loading...
+      </div>
+
+      <button
+        class="month-btn"
+        id="nextMonth"
+        type="button"
+        aria-label="Next month"
+      >
+        &#8250;
+      </button>
+
+    </div>
+
+    <!-- ACCORDION SCHEDULE -->
+
+    <div
+      class="accordion"
+      id="sundayAccordion"
+    ></div>
+
+    <div class="schedule-note">
+      Assignments are subject to confirmation
+      or changes by church leadership.
+    </div>
+
+  </div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+  LIGHT OF LIFE CHURCH •
+  SERVING TOGETHER IN LOVE
+</footer>
+
+<!-- ================================
+     GOOGLE SHEETS CONNECTION
+================================ -->
+
+<script>
+(function () {
+
+  /*
+   * LIVE SUNDAY ASSIGNMENTS
+   * Google Sheets + Google Apps Script
+   *
+   * Only Published schedules are returned.
+   */
+
+  const API_URL =
+    "https://script.google.com/macros/s/AKfycbxjXT2HPlM_gPSb9UJeJGpwZ0NC0orDp1xfCD2ZJs830Ec8bVxfjsjVVUf_WyNOZrzi/exec";
+
+  const roles = [
+    "Opening Prayer",
+    "Praise & Worship",
+    "Offering",
+    "Preaching",
+    "Closing Prayer"
+  ];
+
+  let schedule = {};
+  let loaded = false;
+  let loadError = false;
+  let openDate = null;
+
+  const monthLabel =
+    document.getElementById("monthLabel");
+
+  const accordion =
+    document.getElementById("sundayAccordion");
+
+  const previous =
+    document.getElementById("prevMonth");
+
+  const next =
+    document.getElementById("nextMonth");
+
+  /* PHILIPPINE DATE */
+
+  const dateParts =
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: "Asia/Manila",
+      year: "numeric",
+      month: "numeric"
+    }).formatToParts(new Date());
+
+  function getPart(type) {
+    return Number(
+      dateParts.find(
+        part => part.type === type
+      ).value
+    );
+  }
+
+  let year = getPart("year");
+  let month = getPart("month") - 1;
+
+  function pad(n) {
+    return String(n).padStart(2, "0");
+  }
+
+  function getDateKey(date) {
+    return (
+      date.getFullYear() + "-" +
+      pad(date.getMonth() + 1) + "-" +
+      pad(date.getDate())
+    );
+  }
+
+  function formatDate(date) {
+    return date.toLocaleDateString(
+      "en-US", {
+        month: "long",
+        day: "numeric",
+        year: "numeric"
+      }
+    );
+  }
+
+  function createElement(
+    tag,
+    className,
+    value
+  ) {
+    const element =
+      document.createElement(tag);
+
+    element.className = className;
+
+    if (value !== undefined) {
+      element.textContent = value;
+    }
+
+    return element;
+  }
+
+  /* FIND ALL SUNDAYS IN A MONTH */
+
+  function getSundays(y, m) {
+
+    const sundays = [];
+    const date = new Date(y, m, 1);
+
+    while (date.getMonth() === m) {
+
+      if (date.getDay() === 0) {
+        sundays.push(new Date(date));
+      }
+
+      date.setDate(
+        date.getDate() + 1
+      );
+    }
+
+    return sundays;
+  }
+
+  /* BUILD SUNDAY ACCORDION */
+
+  function render() {
+
+    const selectedMonth =
+      new Date(year, month, 1);
+
+    monthLabel.textContent =
+      selectedMonth.toLocaleDateString(
+        "en-US", {
+          month: "long",
+          year: "numeric"
+        }
+      );
+
+    accordion.replaceChildren();
+
+    const sundays =
+      getSundays(year, month);
+
+    sundays.forEach(function(date, index) {
+
+      const dateKey =
+        getDateKey(date);
+
+      const published =
+        Object.prototype.hasOwnProperty.call(
+          schedule, dateKey
+        );
+
+      const assigned =
+        published ? schedule[dateKey] : {};
+
+      const item =
+        createElement(
+          "div",
+          "sunday-item"
+        );
+
+      const trigger =
+        createElement(
+          "button",
+          "sunday-trigger"
+        );
+
+      trigger.type = "button";
+
+      const dateGroup =
+        createElement(
+          "span",
+          "date-group"
+        );
+
+      dateGroup.appendChild(
+        createElement(
+          "span",
+          "sunday-number",
+          "SUNDAY " + (index + 1)
+        )
+      );
+
+      dateGroup.appendChild(
+        createElement(
+          "span",
+          "sunday-date",
+          formatDate(date)
+        )
+      );
+
+      const symbol =
+        createElement(
+          "span",
+          "toggle-symbol"
+        );
+
+      trigger.appendChild(dateGroup);
+      trigger.appendChild(symbol);
+
+      const panel =
+        createElement(
+          "div",
+          "sunday-panel"
+        );
+
+      panel.id =
+        "panel-" + dateKey;
+
+      trigger.setAttribute(
+        "aria-controls",
+        panel.id
+      );
+
+      /* LOADING */
+
+      if (!loaded) {
+
+        panel.appendChild(
+          createElement(
+            "p",
+            "unassigned",
+            loadError
+              ? "Unable to load the schedule. Please refresh."
+              : "Loading assignments..."
+          )
+        );
+
+      }
+
+      /* NOT PUBLISHED */
+
+      else if (!published) {
+
+        panel.appendChild(
+          createElement(
+            "p",
+            "unassigned",
+            "Assignments not yet published."
+          )
+        );
+
+      }
+
+      /* PUBLISHED ASSIGNMENTS */
+
+      else {
+
+        roles.forEach(function(role) {
+
+          const row =
+            createElement(
+              "div",
+              "assignment"
+            );
+
+          const name =
+            String(
+              assigned[role] || ""
+            ).trim();
+
+          row.appendChild(
+            createElement(
+              "div",
+              "role",
+              role
+            )
+          );
+
+          row.appendChild(
+            createElement(
+              "div",
+              "person" +
+                (!name ? " unassigned" : ""),
+              name || "To be assigned"
+            )
+          );
+
+          panel.appendChild(row);
+
+        });
+
+      }
+
+      const isOpen =
+        openDate === dateKey;
+
+      trigger.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      panel.hidden = !isOpen;
+
+      symbol.textContent =
+        isOpen ? "−" : "+";
+
+      /* OPEN / CLOSE */
+
+      trigger.addEventListener(
+        "click",
+        function() {
+
+          openDate =
+            openDate === dateKey
+              ? null
+              : dateKey;
+
+          render();
+        }
+      );
+
+      item.appendChild(trigger);
+      item.appendChild(panel);
+
+      accordion.appendChild(item);
+
+    });
+
+  }
+
+  /* PREVIOUS MONTH */
+
+  previous.addEventListener(
+    "click",
+    function() {
+
+      const d =
+        new Date(year, month - 1, 1);
+
+      year = d.getFullYear();
+      month = d.getMonth();
+
+      openDate = null;
+      render();
+    }
+  );
+
+  /* NEXT MONTH */
+
+  next.addEventListener(
+    "click",
+    function() {
+
+      const d =
+        new Date(year, month + 1, 1);
+
+      year = d.getFullYear();
+      month = d.getMonth();
+
+      openDate = null;
+      render();
+    }
+  );
+
+  /* LOAD GOOGLE SHEETS DATA */
+
+  function loadSchedule() {
+
+    const callback =
+      "lolScheduleCallback_" +
+      Date.now();
+
+    const script =
+      document.createElement("script");
+
+    let finished = false;
+
+    function cleanup() {
+
+      if (script.parentNode) {
+        script.parentNode.removeChild(script);
+      }
+
+      try {
+        delete window[callback];
+      } catch (e) {
+        window[callback] = undefined;
+      }
+
+    }
+
+    const timeout =
+      setTimeout(
+        function() {
+
+          if (finished) return;
+
+          finished = true;
+          loadError = true;
+
+          cleanup();
+          render();
+
+        },
+        15000
+      );
+
+    /* RECEIVE GOOGLE SHEETS RESPONSE */
+
+    window[callback] =
+      function(response) {
+
+        if (finished) return;
+
+        finished = true;
+        clearTimeout(timeout);
+
+        cleanup();
+
+        if (
+          response &&
+          response.success === true &&
+          response.schedule &&
+          typeof response.schedule === "object" &&
+          !Array.isArray(response.schedule)
+        ) {
+
+          schedule = response.schedule;
+          loaded = true;
+          loadError = false;
+
+        } else {
+
+          loadError = true;
+
+          console.error(
+            "Invalid schedule response."
+          );
+        }
+
+        render();
+      };
+
+    /* CONNECTION ERROR */
+
+    script.onerror =
+      function() {
+
+        if (finished) return;
+
+        finished = true;
+        clearTimeout(timeout);
+
+        loadError = true;
+
+        cleanup();
+        render();
+      };
+
+    /* REQUEST PUBLISHED SCHEDULE */
+
+    script.src =
+      API_URL +
+      "?callback=" +
+      encodeURIComponent(callback) +
+      "&v=" +
+      Date.now();
+
+    document.head.appendChild(script);
+  }
+
+  /* START THE PAGE */
+
+  render();
+  loadSchedule();
+
+})();
+</script>
+
+</body>
+</html>

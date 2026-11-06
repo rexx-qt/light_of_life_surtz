@@ -1,0 +1,456 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>Worship Ministry | Light of Life Church</title>
+
+  <!-- GOOGLE FONTS -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =================================
+       GENERAL SETTINGS
+    ================================= */
+
+    :root {
+      --fern: #558D5E;
+      --forest: #244B32;
+      --deep: #193E2C;
+      --cream: #FFF9EF;
+      --gold: #EAD99A;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+
+      font-family: "Montserrat", Arial, sans-serif;
+
+      background: var(--deep);
+      color: var(--cream);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =================================
+       ANIMATED GREEN BACKGROUND
+    ================================= */
+
+    .worship-hero {
+      position: relative;
+
+      width: 100%;
+      min-height: 100vh;
+      min-height: 100dvh;
+
+      display: flex;
+      flex-direction: column;
+
+      isolation: isolate;
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          ellipse at 12% 18%,
+          rgba(190,240,199,.35),
+          transparent 38%
+        ),
+        radial-gradient(
+          ellipse at 82% 72%,
+          rgba(141,205,159,.35),
+          transparent 45%
+        ),
+        linear-gradient(
+          140deg,
+          #71A67B 0%,
+          #558D5E 22%,
+          #244F38 46%,
+          #447D54 67%,
+          #173A2A 100%
+        );
+
+      background-size: 150% 150%;
+
+      animation: greenMove 22s ease-in-out infinite;
+    }
+
+    .worship-hero::before {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      pointer-events: none;
+
+      background: linear-gradient(
+        165deg,
+        transparent 10%,
+        rgba(225,255,224,.15) 25%,
+        transparent 38%,
+        rgba(12,48,31,.25) 52%,
+        transparent 66%,
+        rgba(192,238,206,.15) 78%,
+        transparent 92%
+      );
+
+      filter: blur(40px);
+
+      animation: greenWaves 16s ease-in-out
+                 infinite alternate;
+    }
+
+    /* =================================
+       HEADER
+    ================================= */
+
+    .worship-header {
+      position: relative;
+      z-index: 5;
+
+      display: flex;
+      align-items: center;
+
+      padding: 38px 6%;
+    }
+
+    /* =================================
+       CLICKABLE CHURCH LOGO
+    ================================= */
+
+    .worship-brand {
+      display: inline-flex;
+      align-items: center;
+
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
+    .worship-logo {
+      display: block;
+
+      width: 75px;
+      height: 75px;
+
+      object-fit: contain;
+
+      border-radius: 6px;
+    }
+
+    .worship-brand-name {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+
+      gap: 8px;
+
+      font-size: 25px;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .worship-brand-name strong {
+      background: var(--cream);
+      color: #386A43;
+
+      padding: 9px 15px;
+      border-radius: 50px;
+    }
+
+    .worship-brand:hover {
+      opacity: .9;
+    }
+
+    /* =================================
+       WORSHIP MINISTRY TITLE
+    ================================= */
+
+    .worship-center {
+      position: relative;
+      z-index: 2;
+
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 60px 6% 95px;
+    }
+
+    .worship-eyebrow {
+      margin: 0 0 25px;
+
+      color: var(--gold);
+
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 5px;
+
+      text-transform: uppercase;
+    }
+
+    .worship-title {
+      margin: 0;
+
+      font-family: "Anton", Impact, sans-serif;
+
+      font-size: clamp(65px, 11vw, 170px);
+      font-weight: 400;
+      line-height: 1.05;
+
+      letter-spacing: .02em;
+      text-transform: uppercase;
+
+      color: var(--cream);
+
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .worship-description {
+      max-width: 760px;
+
+      margin: 30px auto 0;
+
+      font-size: clamp(15px, 1.5vw, 19px);
+      font-weight: 500;
+      line-height: 1.9;
+
+      color: var(--cream);
+
+      animation: fadeUp 1.5s ease both;
+    }
+
+    /* =================================
+       FOOTER
+    ================================= */
+
+    .worship-footer {
+      position: relative;
+      z-index: 2;
+
+      padding: 25px 6% 38px;
+
+      text-align: center;
+
+      color: var(--cream);
+
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+    }
+
+    /* =================================
+       ANIMATIONS
+    ================================= */
+
+    @keyframes greenMove {
+      0%, 100% {
+        background-position: 0% 20%;
+      }
+
+      50% {
+        background-position: 100% 80%;
+      }
+    }
+
+    @keyframes greenWaves {
+      from {
+        transform:
+          rotate(-7deg)
+          translateX(-2%);
+      }
+
+      to {
+        transform:
+          rotate(-3deg)
+          translateX(3%);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* =================================
+       TABLET
+    ================================= */
+
+    @media (max-width: 1050px) {
+
+      .worship-header {
+        padding: 28px 5%;
+      }
+
+      .worship-center {
+        padding: 60px 5% 85px;
+      }
+
+    }
+
+    /* =================================
+       MOBILE
+    ================================= */
+
+    @media (max-width: 768px) {
+
+      .worship-logo {
+        width: 55px;
+        height: 55px;
+      }
+
+      .worship-brand-name {
+        font-size: 19px;
+        gap: 6px;
+      }
+
+      .worship-brand-name strong {
+        padding: 6px 10px;
+      }
+
+      .worship-center {
+        padding: 65px 5% 85px;
+      }
+
+      .worship-eyebrow {
+        font-size: 11px;
+        letter-spacing: 3px;
+      }
+
+      .worship-title {
+        font-size: clamp(52px, 13vw, 95px);
+      }
+
+      .worship-description {
+        margin-top: 25px;
+        font-size: 14px;
+        line-height: 1.8;
+      }
+
+      .worship-footer {
+        font-size: 10px;
+        line-height: 1.8;
+      }
+
+    }
+
+    /* =================================
+       ACCESSIBILITY
+    ================================= */
+
+    a:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 5px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ================================
+       WORSHIP MINISTRY PAGE
+  ================================= -->
+
+  <section class="worship-hero">
+
+    <!-- CHURCH HEADER -->
+
+    <header class="worship-header">
+
+      <!-- CLICK TO RETURN HOME -->
+
+      <a
+        href="./index.html"
+        class="worship-brand"
+        aria-label="Return to Light of Life Church Homepage"
+      >
+
+        <img
+          class="worship-logo"
+          src="https://assets.cdn.filesafe.space/hDZZTUA89a5X4yE79AnS/media/6ae4a8b1736386d0dc75b141.jpg"
+          alt="Light of Life Church Logo"
+        >
+
+        <span class="worship-brand-name">
+          <span>Light of</span>
+          <strong>Life Church</strong>
+        </span>
+
+      </a>
+
+    </header>
+
+    <!-- WORSHIP MINISTRY HEADING -->
+
+    <main class="worship-center">
+
+      <p class="worship-eyebrow">
+        LIGHT OF LIFE CHURCH
+      </p>
+
+      <h1 class="worship-title">
+        WORSHIP<br>
+        MINISTRY
+      </h1>
+
+      <p class="worship-description">
+        Serving God through praise and worship.
+      </p>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="worship-footer">
+      GROWING TOGETHER IN FAITH
+      &nbsp; • &nbsp;
+      SERVING TOGETHER IN LOVE
+    </footer>
+
+  </section>
+
+</body>
+</html>

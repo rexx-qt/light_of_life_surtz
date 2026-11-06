@@ -1,0 +1,2355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Radiant Light Ministry | Light of Life Church</title>
+
+<!-- CHURCH BRAND FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- RADIANT LIGHT DISPLAY FONT -->
+<link href="https://fonts.cdnfonts.com/css/some-time-later" rel="stylesheet">
+
+<style>
+:root {
+  --fern: #558D5E;
+  --deep: #193E2C;
+  --forest: #244B32;
+  --cream: #FFF9EF;
+  --gold: #EAD99A;
+  --blue: #BBDCDD;
+  --yellow: #F8DF76;
+  --peach: #F3ABA3;
+  --lilac: #C9B9DF;
+
+  --heading: "Some Time Later", "SomeTimeLaterRegular",
+             Impact, sans-serif;
+
+  --text: "Agrandir", "Nunito", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--deep);
+  font-family: var(--text);
+}
+
+button, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #D9B95E;
+  outline-offset: 4px;
+}
+
+/* =====================================
+   GREEN HERO — HOMEPAGE STYLE
+===================================== */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  color: var(--cream);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 18%,
+      rgba(190,240,199,.35),
+      transparent 38%
+    ),
+    radial-gradient(
+      ellipse at 82% 72%,
+      rgba(141,205,159,.35),
+      transparent 45%
+    ),
+    linear-gradient(
+      140deg,
+      #71A67B 0%,
+      #558D5E 22%,
+      #244F38 46%,
+      #447D54 67%,
+      #173A2A 100%
+    );
+
+  background-size: 150% 150%;
+  animation: greenMove 22s ease-in-out infinite;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    165deg,
+    transparent 10%,
+    rgba(225,255,224,.15) 25%,
+    transparent 38%,
+    rgba(12,48,31,.25) 52%,
+    transparent 66%,
+    rgba(192,238,206,.15) 78%,
+    transparent 92%
+  );
+
+  filter: blur(40px);
+  animation: greenWaves 16s ease-in-out
+             infinite alternate;
+}
+
+/* =====================================
+   EXACT HOMEPAGE-STYLE CHURCH BRAND
+===================================== */
+
+.header {
+  position: relative;
+  z-index: 10;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  padding: 38px 6%;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+.logo {
+  display: block;
+  width: 75px;
+  height: 75px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.brand-name {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--cream);
+  line-height: 1.2;
+}
+
+.brand-name strong {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 800;
+
+  background: var(--cream);
+  color: #386A43;
+
+  padding: 9px 15px;
+  border-radius: 50px;
+}
+
+/* =====================================
+   CENTERED MINISTRY TITLE
+===================================== */
+
+.hero-center {
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 60px 6% 85px;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-family: var(--text);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin: 0 0 25px;
+}
+
+.hero-title {
+  max-width: 1400px;
+  margin: 0;
+
+  font-family: var(--heading);
+  font-size: clamp(55px, 9.2vw, 145px);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: 0;
+  text-transform: uppercase;
+
+  color: var(--cream);
+  overflow-wrap: anywhere;
+
+  animation: fadeUp 1.2s ease both;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-title .title-light {
+  color: var(--gold);
+}
+
+.hero-description {
+  max-width: 720px;
+  margin: 25px auto 0;
+
+  font-family: var(--text);
+  font-size: clamp(15px, 1.6vw, 19px);
+  line-height: 1.85;
+  font-weight: 500;
+
+  color: var(--cream);
+}
+
+.hero-button {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 15px 26px;
+
+  border: 2px solid var(--cream);
+  border-radius: 5px;
+
+  background: var(--cream);
+  color: var(--deep);
+
+  font-family: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.hero-button:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.hero-bottom {
+  position: relative;
+  z-index: 2;
+
+  padding: 24px 6% 38px;
+  text-align: center;
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+/* =====================================
+   DASHBOARD
+===================================== */
+
+.container {
+  width: 100%;
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 85px 24px 110px;
+}
+
+.section-label {
+  display: block;
+  margin-bottom: 12px;
+
+  font-family: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--fern);
+}
+
+.section-title {
+  margin: 0 0 20px;
+
+  font-family: var(--heading);
+  font-size: clamp(41px, 5.8vw, 76px);
+  font-weight: 400;
+  line-height: 1.18;
+}
+
+.section-description {
+  max-width: 800px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #476457;
+}
+
+/* =====================================
+   PROGRESS TRACKER
+===================================== */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin: 38px 0 55px;
+}
+
+.stat {
+  padding: 25px;
+  background: white;
+
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+  box-shadow: 5px 5px 0 var(--deep);
+}
+
+.stat:nth-child(2) {
+  background: var(--yellow);
+}
+
+.stat:nth-child(3) {
+  background: var(--blue);
+}
+
+.stat small {
+  font-family: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.stat-number {
+  display: block;
+  margin: 15px 0;
+
+  font-family: var(--heading);
+  font-size: 43px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.progress {
+  height: 8px;
+  background: rgba(25,62,44,.16);
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: var(--deep);
+  transition: width .3s ease;
+}
+
+/* =====================================
+   QUICK NAVIGATION
+===================================== */
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.quick-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+
+  min-height: 135px;
+  padding: 20px;
+
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+  box-shadow: 4px 4px 0 var(--deep);
+
+  font-family: var(--heading);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.quick-link small {
+  font-family: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.quick-link:nth-child(1) { background: var(--yellow); }
+.quick-link:nth-child(2) { background: var(--blue); }
+.quick-link:nth-child(3) { background: var(--peach); }
+.quick-link:nth-child(4) { background: var(--lilac); }
+
+.quick-link:hover {
+  transform: translateY(-3px);
+}
+
+/* =====================================
+   CONTENT SECTIONS
+===================================== */
+
+.content-section {
+  margin-top: 95px;
+  scroll-margin-top: 25px;
+}
+
+.next-lesson {
+  margin-top: 25px;
+  padding: 30px;
+
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+
+  background: var(--blue);
+}
+
+.next-lesson h3 {
+  margin: 12px 0;
+
+  font-family: var(--heading);
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.next-lesson p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.primary-button,
+.secondary-button {
+  display: inline-block;
+  padding: 13px 19px;
+
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+
+  font-family: var(--text);
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.primary-button {
+  background: var(--deep);
+  color: white;
+}
+
+.secondary-button {
+  background: white;
+  color: var(--deep);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  filter: brightness(.94);
+}
+
+/* =====================================
+   CURRICULUM
+===================================== */
+
+.curriculum-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: 15px;
+  margin: 30px 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  font-family: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.field select {
+  min-width: 205px;
+  max-width: 100%;
+  padding: 13px;
+
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+
+  color: var(--deep);
+  background: white;
+}
+
+.theme-heading {
+  margin-bottom: 18px;
+  padding: 26px;
+
+  background: var(--yellow);
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+}
+
+.theme-heading h3 {
+  margin: 12px 0;
+
+  font-family: var(--heading);
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.theme-heading p {
+  line-height: 1.8;
+}
+
+/* =====================================
+   LESSON ACCORDIONS
+===================================== */
+
+.lesson {
+  margin-bottom: 14px;
+
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+  background: white;
+
+  overflow: hidden;
+}
+
+.lesson:nth-child(even) {
+  background: #EFF5EB;
+}
+
+.lesson summary {
+  padding: 23px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.lesson summary::-webkit-details-marker {
+  display: none;
+}
+
+.lesson-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.lesson-summary h3 {
+  margin: 10px 0;
+
+  font-family: var(--heading);
+  font-size: clamp(23px, 3vw, 32px);
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.lesson-summary p {
+  margin: 0;
+  font-size: 13px;
+  color: #526759;
+}
+
+.lesson-status {
+  font-family: var(--text);
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+  color: #A05B37;
+}
+
+.lesson-status.done {
+  color: #347449;
+}
+
+.lesson-content {
+  padding: 26px;
+  border-top: 1px solid #CBD9CF;
+}
+
+.lesson-content h4 {
+  margin: 30px 0 12px;
+
+  font-family: var(--heading);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.lesson-content p,
+.lesson-content li {
+  font-family: var(--text);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.lesson-content li {
+  margin-bottom: 10px;
+}
+
+.lesson-content ol,
+.lesson-content ul {
+  padding-left: 24px;
+}
+
+.lesson-note {
+  margin-top: 22px;
+  padding: 18px 20px;
+
+  background: #E7EFE5;
+  border-left: 4px solid var(--fern);
+
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.lesson-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+/* =====================================
+   RESOURCES
+===================================== */
+
+.resources {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+  margin-top: 25px;
+}
+
+.resource-card {
+  padding: 26px;
+
+  border: 2px solid var(--deep);
+  border-radius: 5px;
+  background: var(--lilac);
+}
+
+.resource-card:nth-child(even) {
+  background: var(--yellow);
+}
+
+.resource-card h3 {
+  margin: 0 0 15px;
+
+  font-family: var(--heading);
+  font-size: 29px;
+  font-weight: 400;
+}
+
+.resource-card p {
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+.footer {
+  padding: 35px 20px;
+
+  background: var(--deep);
+  color: var(--cream);
+
+  text-align: center;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+/* =====================================
+   MOVING BANNER AT THE VERY BOTTOM
+===================================== */
+
+.bottom-marquee {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  min-height: 290px;
+
+  overflow: hidden;
+
+  background: var(--blue);
+  border-top: 3px solid var(--deep);
+}
+
+.bottom-marquee::before {
+  content: "";
+  position: absolute;
+
+  width: 340px;
+  height: 340px;
+
+  left: 15%;
+  top: -95px;
+
+  border: 50px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.marquee-track {
+  position: relative;
+  display: flex;
+  width: max-content;
+
+  animation: marqueeMove 26s linear infinite;
+  will-change: transform;
+}
+
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.marquee-group span {
+  flex-shrink: 0;
+  display: inline-block;
+  padding-right: 65px;
+
+  font-family: var(--heading);
+  font-size: clamp(95px, 13vw, 205px);
+  font-weight: 400;
+  line-height: 1.3;
+
+  color: #080808;
+}
+
+@keyframes marqueeMove {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* =====================================
+   ANIMATIONS
+===================================== */
+
+@keyframes greenMove {
+  0%, 100% { background-position: 0% 20%; }
+  50% { background-position: 100% 80%; }
+}
+
+@keyframes greenWaves {
+  from {
+    transform: rotate(-7deg) translateX(-2%);
+  }
+  to {
+    transform: rotate(-3deg) translateX(3%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 950px) {
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .quick-links {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .resources {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 650px) {
+  .header {
+    padding: 28px 5%;
+  }
+
+  .logo {
+    width: 55px;
+    height: 55px;
+  }
+
+  .brand-name {
+    font-size: 19px;
+    gap: 6px;
+  }
+
+  .brand-name strong {
+    padding: 6px 10px;
+  }
+
+  .hero-center {
+    padding: 65px 5% 85px;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 11vw, 80px);
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 14px;
+  }
+
+  .container {
+    padding: 65px 18px 90px;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-link {
+    min-height: 110px;
+    font-size: 19px;
+    padding: 15px;
+  }
+
+  .curriculum-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .field select {
+    width: 100%;
+  }
+
+  .lesson-summary {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .bottom-marquee {
+    min-height: 190px;
+  }
+
+  .marquee-group span {
+    font-size: 95px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =====================================
+     ANIMATED GREEN MINISTRY HERO
+===================================== -->
+
+<section class="hero">
+
+  <header class="header">
+
+    <!-- SAME BRAND AS INDEX.HTML -->
+
+    <a
+      href="./index.html"
+      class="brand"
+      aria-label="Light of Life Church Homepage"
+    >
+
+      <img
+        class="logo"
+        src="https://assets.cdn.filesafe.space/hDZZTUA89a5X4yE79AnS/media/6ae4a8b1736386d0dc75b141.jpg"
+        alt="Light of Life Church Logo"
+      >
+
+      <span class="brand-name">
+        <span>Light of</span>
+        <strong>Life Church</strong>
+      </span>
+
+    </a>
+
+  </header>
+
+  <!-- CENTERED TITLE -->
+
+  <main class="hero-center">
+
+    <p class="hero-eyebrow">
+      LIGHT OF LIFE CHURCH | CHILDREN'S MINISTRY
+    </p>
+
+    <h1 class="hero-title">
+      <span>RADIANT LIGHT</span>
+      <span class="title-light">MINISTRY</span>
+    </h1>
+
+    <p class="hero-description">
+      Little hearts. Big faith. Bright futures.
+      Helping children discover God's love,
+      grow in faith, and learn through play.
+    </p>
+
+    <a href="#dashboard" class="hero-button">
+      EXPLORE OUR BIBLE JOURNEY
+    </a>
+
+  </main>
+
+  <div class="hero-bottom">
+    GROWING TOGETHER IN FAITH |
+    SERVING TOGETHER IN LOVE
+  </div>
+
+</section>
+
+<!-- =====================================
+     TEACHER DASHBOARD
+===================================== -->
+
+<div class="container">
+
+  <section id="dashboard">
+
+    <span class="section-label">
+      RADIANT LIGHT TEACHER WORKSPACE
+    </span>
+
+    <h2 class="section-title">
+      Our Bible Journey
+    </h2>
+
+    <p class="section-description">
+      A continuous two-year Bible curriculum with
+      104 connected lessons. Each lesson includes
+      its own Bible story, teaching execution,
+      discussion questions, and group activity.
+    </p>
+
+    <!-- PROGRESS -->
+
+    <div class="stats">
+
+      <div class="stat">
+        <small>LESSONS TAUGHT</small>
+        <span class="stat-number" id="totalCount">0 / 104</span>
+        <div class="progress">
+          <div class="progress-fill" id="totalBar"></div>
+        </div>
+      </div>
+
+      <div class="stat">
+        <small>YEAR 1 PROGRESS</small>
+        <span class="stat-number" id="year1Count">0 / 52</span>
+        <div class="progress">
+          <div class="progress-fill" id="year1Bar"></div>
+        </div>
+      </div>
+
+      <div class="stat">
+        <small>YEAR 2 PROGRESS</small>
+        <span class="stat-number" id="year2Count">0 / 52</span>
+        <div class="progress">
+          <div class="progress-fill" id="year2Bar"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- QUICK NAVIGATION -->
+
+    <nav class="quick-links" aria-label="Ministry sections">
+
+      <a href="#curriculum" class="quick-link">
+        <small>01 / EXPLORE</small>
+        BIBLE CURRICULUM
+      </a>
+
+      <a href="#up-next" class="quick-link">
+        <small>02 / CONTINUE</small>
+        NEXT LESSON
+      </a>
+
+      <a href="#curriculum" class="quick-link">
+        <small>03 / PREPARE</small>
+        TEACHING PLANS
+      </a>
+
+      <a href="#resources" class="quick-link">
+        <small>04 / DISCOVER</small>
+        TEACHER RESOURCES
+      </a>
+
+    </nav>
+
+  </section>
+
+  <!-- UP NEXT -->
+
+  <section class="content-section" id="up-next">
+
+    <span class="section-label">
+      CONTINUE THE JOURNEY
+    </span>
+
+    <h2 class="section-title">
+      Up Next
+    </h2>
+
+    <div class="next-lesson" id="nextLesson"></div>
+
+  </section>
+
+  <!-- CURRICULUM -->
+
+  <section class="content-section" id="curriculum">
+
+    <span class="section-label">
+      24 CONNECTED LEARNING THEMES
+    </span>
+
+    <h2 class="section-title">
+      Bible Curriculum
+    </h2>
+
+    <p class="section-description">
+      Choose a year and monthly theme to explore
+      connected Sunday lessons. The curriculum
+      follows a learning journey rather than
+      simply following Bible chapters in order.
+    </p>
+
+    <div class="curriculum-controls">
+
+      <label class="field">
+        SELECT YEAR
+
+        <select id="yearSelect">
+          <option value="1">Year 1 - Discovering Faith</option>
+          <option value="2">Year 2 - Living Our Faith</option>
+        </select>
+
+      </label>
+
+      <label class="field">
+        SELECT THEME
+        <select id="monthSelect"></select>
+      </label>
+
+      <button type="button"
+        class="secondary-button"
+        id="previous">
+        PREVIOUS
+      </button>
+
+      <button type="button"
+        class="secondary-button"
+        id="next">
+        NEXT
+      </button>
+
+    </div>
+
+    <div id="themeInfo"></div>
+    <div id="lessonList"></div>
+
+  </section>
+
+  <!-- RESOURCES -->
+
+  <section class="content-section" id="resources">
+
+    <span class="section-label">
+      LEARN AND PREPARE
+    </span>
+
+    <h2 class="section-title">
+      Teacher Resources
+    </h2>
+
+    <div class="resources">
+
+      <article class="resource-card">
+
+        <h3>Trueway Kids</h3>
+
+        <p>
+          Discover Bible stories, teaching resources,
+          printable activities, and lesson ideas.
+        </p>
+
+        <a
+          href="https://truewaykids.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="secondary-button">
+          VISIT TRUEWAY KIDS
+        </a>
+
+      </article>
+
+      <article class="resource-card">
+
+        <h3>Read the Bible</h3>
+
+        <p>
+          Prepare the Scripture passage and
+          the main lesson before teaching.
+        </p>
+
+        <a
+          href="https://www.biblegateway.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="secondary-button">
+          OPEN BIBLE
+        </a>
+
+      </article>
+
+    </div>
+
+    <p class="section-description">
+      Completion records are currently saved
+      in this browser on this device.
+      Shared progress across teachers can
+      be connected later.
+    </p>
+
+  </section>
+
+</div>
+
+<!-- =====================================
+     CHURCH FOOTER
+===================================== -->
+
+<footer class="footer">
+  LIGHT OF LIFE CHURCH |
+  RADIANT LIGHT MINISTRY |
+  GROWING TOGETHER IN FAITH
+</footer>
+
+<!-- =====================================
+     VERY BOTTOM ANIMATED BANNER
+===================================== -->
+
+<section class="bottom-marquee"
+  aria-label="Radiant Light Ministry">
+
+  <div class="marquee-track" aria-hidden="true">
+
+    <div class="marquee-group">
+      <span>RADIANT LIGHT MINISTRY</span>
+      <span>RADIANT LIGHT MINISTRY</span>
+    </div>
+
+    <div class="marquee-group">
+      <span>RADIANT LIGHT MINISTRY</span>
+      <span>RADIANT LIGHT MINISTRY</span>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- =====================================
+     TWO-YEAR BIBLE CURRICULUM
+===================================== -->
+
+<script>
+(function () {
+  "use strict";
+
+  /*
+    24 THEMES
+    4 STORIES PER THEME = 96
+    8 QUARTERLY REVIEWS = 8
+    TOTAL = 104 LESSONS
+
+    Every story record:
+    [Title, Bible Passage, Lesson Objective, Group Activity]
+  */
+
+  const themes = [
+
+    /* YEAR 1 */
+
+    {
+      title: "God Knows and Loves Me",
+      goal: "Every child is known, loved, and welcomed by God.",
+      stories: [
+        ["The Lost Sheep","Luke 15:3-7",
+          "God cares for every person.",
+          "Hide a paper sheep in the classroom. Let everyone search together and discuss why the shepherd looked for the missing sheep."],
+
+        ["Jesus Welcomes Children","Mark 10:13-16",
+          "Children are important to Jesus.",
+          "Create a welcome poster. Every child adds their name and a drawing showing that everyone belongs."],
+
+        ["Zacchaeus Meets Jesus","Luke 19:1-10",
+          "Jesus knows us and welcomes us.",
+          "Build a paper tree and move a paper Zacchaeus up its branches while retelling how Jesus noticed him."],
+
+        ["The Prodigal Son","Luke 15:11-32",
+          "God welcomes us back with love.",
+          "Act out the son's journey home. Discuss the father's response and the meaning of forgiveness."]
+      ]
+    },
+
+    {
+      title: "Showing Love to Others",
+      goal: "Love becomes visible through kindness.",
+      stories: [
+        ["The Good Samaritan","Luke 10:25-37",
+          "Love means helping others.",
+          "Use chairs and a cloth bandage to create a pretend roadside. Act out the Samaritan helping the traveler."],
+
+        ["Ruth and Naomi","Ruth 1",
+          "Love includes loyalty and care.",
+          "Create a paper friendship chain. On each strip, add a way to care for family or friends."],
+
+        ["Jesus Washes Feet","John 13:1-17",
+          "We can serve others humbly.",
+          "Make paper footprints with examples of service and arrange them into a classroom path."],
+
+        ["The Early Church Shares","Acts 2:42-47",
+          "We can share and care together.",
+          "Give different groups different craft supplies and one shared project so they must cooperate."]
+      ]
+    },
+
+    {
+      title: "Forgiveness and New Beginnings",
+      goal: "We can forgive because God shows mercy.",
+      stories: [
+        ["Joseph Forgives His Brothers","Genesis 45",
+          "Forgiveness can heal relationships.",
+          "Tear a paper heart and carefully repair it with tape while discussing forgiveness."],
+
+        ["The Unforgiving Servant","Matthew 18:21-35",
+          "We should forgive others.",
+          "Use pretend debt tokens to act out receiving forgiveness and refusing to give forgiveness."],
+
+        ["Jesus Restores Peter","John 21:15-19",
+          "Jesus gives second chances.",
+          "Make three paper fish, each showing a way to demonstrate love for Jesus."],
+
+        ["Jonah and Nineveh","Jonah 3-4",
+          "God shows mercy.",
+          "Build a paper city and discuss how the people responded to Jonah's warning."]
+      ]
+    },
+
+    {
+      title: "Learning to Trust God",
+      goal: "We can trust God when things are uncertain.",
+      stories: [
+        ["Noah Obeys God","Genesis 6-9",
+          "Trust leads to obedience.",
+          "Build an ark from recycled cardboard and place paper animals inside."],
+
+        ["God Calls Abraham","Genesis 12",
+          "Trust means following God.",
+          "Create a classroom journey with paper signs and follow a route without knowing every turn."],
+
+        ["David and Goliath","1 Samuel 17",
+          "God helps us face fear.",
+          "Draw a paper giant and gently knock down a safe paper target with rolled socks."],
+
+        ["Daniel and the Lions","Daniel 6",
+          "We can stay faithful.",
+          "Create lion faces from paper plates and use them to retell Daniel's story."]
+      ]
+    },
+
+    {
+      title: "Courage to Do What Is Right",
+      goal: "God helps us choose courage and goodness.",
+      stories: [
+        ["Esther Speaks Up","Esther 4-5",
+          "Courage helps protect others.",
+          "Make a paper crown and discuss situations where courage can help someone."],
+
+        ["Three Friends in the Furnace","Daniel 3",
+          "We can stand firm.",
+          "Create a paper furnace with red and orange strips and retell the friends' decision."],
+
+        ["Joshua Leads Israel","Joshua 1",
+          "God strengthens us.",
+          "Create a courage banner with words or pictures of brave, kind choices."],
+
+        ["Rahab Helps the Spies","Joshua 2",
+          "Courage can help others.",
+          "Build a paper city wall and hang a red ribbon from one window."]
+      ]
+    },
+
+    {
+      title: "Prayer and Listening to God",
+      goal: "We can speak to and listen to God.",
+      stories: [
+        ["Hannah Prays","1 Samuel 1",
+          "God hears our prayers.",
+          "Make a prayer tree from paper leaves containing simple prayers."],
+
+        ["Samuel Listens","1 Samuel 3",
+          "Listening matters.",
+          "Play a listening challenge using quiet classroom sounds."],
+
+        ["Jesus Teaches Prayer","Matthew 6:5-13",
+          "We can talk honestly to God.",
+          "Create a prayer wheel with praise, thanksgiving, help, and prayers for others."],
+
+        ["Paul and Silas Pray","Acts 16",
+          "We can pray in hard times.",
+          "Make a paper chain representing prison chains, then separate it while discussing the story."]
+      ]
+    },
+
+    {
+      title: "Gratitude and Generosity",
+      goal: "We can be thankful and share.",
+      stories: [
+        ["The Thankful Leper","Luke 17:11-19",
+          "Thankfulness matters.",
+          "Create a wall of gratitude notes or drawings."],
+
+        ["The Boy Shares His Lunch","John 6:1-14",
+          "Small gifts can help many.",
+          "Make a paper basket containing five loaves and two fish."],
+
+        ["Elijah and the Widow","1 Kings 17",
+          "God provides.",
+          "Use a jar and paper food pieces to illustrate God's provision."],
+
+        ["The Widow's Offering","Mark 12:41-44",
+          "Giving comes from the heart.",
+          "Create pretend coins and discuss why Jesus noticed the widow's offering."]
+      ]
+    },
+
+    {
+      title: "Wisdom and Obedience",
+      goal: "Wise choices help us follow God.",
+      stories: [
+        ["Adam and Eve","Genesis 3",
+          "Choices have consequences.",
+          "Prepare everyday decision cards and discuss possible outcomes."],
+
+        ["Solomon Asks for Wisdom","1 Kings 3",
+          "We can seek wisdom.",
+          "Create a wisdom crown decorated with examples of wise choices."],
+
+        ["The Wise Builder","Matthew 7:24-27",
+          "Wisdom becomes action.",
+          "Build miniature houses on stable and unstable surfaces and compare them."],
+
+        ["Young Jesus at the Temple","Luke 2:41-52",
+          "We can grow in understanding.",
+          "Make a question wall for things children want to learn from the Bible."]
+      ]
+    },
+
+    {
+      title: "Faith Through Challenges",
+      goal: "We can trust God during difficult times.",
+      stories: [
+        ["Jesus Calms the Storm","Mark 4:35-41",
+          "Jesus is with us.",
+          "Place paper boats on a blue cloth, move it like a storm, and then let it become calm."],
+
+        ["Peter Walks on Water","Matthew 14:22-33",
+          "We can turn to Jesus.",
+          "Lay paper footprints across a blue floor mat while discussing Peter's fear."],
+
+        ["Joseph in Egypt","Genesis 39-41",
+          "God works through hard seasons.",
+          "Arrange story cards showing Joseph's challenges and responsibilities in Egypt."],
+
+        ["Paul Encourages Others","Acts 27",
+          "Hope helps us encourage.",
+          "Make a paper ship and write encouragement messages for people facing difficulties."]
+      ]
+    },
+
+    {
+      title: "Using Our Gifts",
+      goal: "Everyone can serve and help.",
+      stories: [
+        ["Moses Is Called","Exodus 3",
+          "God can use us.",
+          "Make a paper burning bush and discuss Moses' response."],
+
+        ["The Boy with Five Loaves","John 6",
+          "Small contributions matter.",
+          "Place paper bread and fish into baskets while discussing sharing."],
+
+        ["Dorcas Helps Others","Acts 9:36-42",
+          "Kindness makes a difference.",
+          "Decorate paper clothing shapes with kind actions."],
+
+        ["The Parable of the Talents","Matthew 25:14-30",
+          "We can use our gifts well.",
+          "Make cards describing talents and brainstorm ways to help others with them."]
+      ]
+    },
+
+    {
+      title: "Following Jesus",
+      goal: "Being Jesus' friend shapes our lives.",
+      stories: [
+        ["Jesus Calls His Disciples","Mark 1:16-20",
+          "Jesus invites us to follow.",
+          "Make a string fishing net and paper fish showing ways to follow Jesus."],
+
+        ["Mary and Martha","Luke 10:38-42",
+          "Listening to Jesus matters.",
+          "Act out a busy room and a quiet listening scene."],
+
+        ["The Vine and Branches","John 15",
+          "We grow close to Jesus.",
+          "Create a paper vine with fruit showing ways to stay close to Jesus."],
+
+        ["The Great Commission","Matthew 28:16-20",
+          "We can share God's love.",
+          "Make a paper map showing where children can help and encourage others."]
+      ]
+    },
+
+    {
+      title: "Jesus, Our Greatest Gift",
+      goal: "Jesus brings hope and love.",
+      stories: [
+        ["God Promises a Savior","Isaiah 9:2-7",
+          "God promises hope.",
+          "Create paper stars containing words of hope."],
+
+        ["An Angel Visits Mary","Luke 1:26-38",
+          "Mary trusts God.",
+          "Make an announcement scroll and discuss Mary's response."],
+
+        ["The Birth of Jesus","Luke 2:1-20",
+          "Jesus comes into the world.",
+          "Build a nativity scene with paper figures and a cardboard stable."],
+
+        ["The Wise Men","Matthew 2:1-12",
+          "We can seek Jesus.",
+          "Make a star trail leading to a paper nativity scene."]
+      ]
+    },
+
+    /* YEAR 2 */
+
+    {
+      title: "Who I Am in Christ",
+      goal: "Every person has value and purpose.",
+      stories: [
+        ["Made in God's Image","Genesis 1:26-31",
+          "Everyone has value.",
+          "Create a classroom mural of paper self-portraits."],
+
+        ["The Good Shepherd","John 10",
+          "Jesus knows us.",
+          "Make a paper sheepfold and guide paper sheep inside."],
+
+        ["Jesus Calls Matthew","Matthew 9:9-13",
+          "Jesus invites people to follow.",
+          "Act out Matthew leaving his work using a table and pretend coins."],
+
+        ["The Lost Coin","Luke 15:8-10",
+          "Every person matters.",
+          "Hide a large paper coin and celebrate finding it."]
+      ]
+    },
+
+    {
+      title: "Building Strong Friendships",
+      goal: "Friendship includes loyalty and kindness.",
+      stories: [
+        ["David and Jonathan","1 Samuel 18-20",
+          "Friends show loyalty.",
+          "Make friendship bands from paper strips."],
+
+        ["Ruth Chooses Loyalty","Ruth 1",
+          "Friendship includes commitment.",
+          "Create paper footprints showing ways to support friends."],
+
+        ["Four Friends Help","Mark 2:1-12",
+          "Friends help one another.",
+          "Carry a lightweight paper figure using a miniature mat held by four strings."],
+
+        ["Barnabas Encourages Paul","Acts 9",
+          "Encouragement matters.",
+          "Create encouragement cards for others."]
+      ]
+    },
+
+    {
+      title: "Handling Big Feelings",
+      goal: "God helps us respond wisely to feelings.",
+      stories: [
+        ["Elijah Feels Exhausted","1 Kings 19",
+          "God cares when we are overwhelmed.",
+          "Create feelings cards and discuss healthy ways to rest and seek support."],
+
+        ["Jesus Calms Fear","Mark 4:35-41",
+          "We can bring fear to Jesus.",
+          "Use a teacher-prepared calm-and-storm jar to illustrate emotions settling."],
+
+        ["Cain and Abel","Genesis 4",
+          "Anger needs wise choices.",
+          "Make a stop-think-choose poster and practice responses."],
+
+        ["Jesus Weeps","John 11",
+          "Sadness can be expressed.",
+          "Create comfort cards for someone who is sad."]
+      ]
+    },
+
+    {
+      title: "Honesty and Integrity",
+      goal: "Doing what is right matters.",
+      stories: [
+        ["Daniel Makes a Choice","Daniel 1",
+          "Integrity starts with decisions.",
+          "Sort fictional scenario cards into wise and unwise decisions."],
+
+        ["Ananias and Sapphira","Acts 5:1-11",
+          "Truthfulness matters.",
+          "Discuss fictional honesty situations and practice truthful responses."],
+
+        ["Joseph Chooses Right","Genesis 39",
+          "We can do what is right.",
+          "Make a paper decision path showing choices and outcomes."],
+
+        ["Zacchaeus Makes Things Right","Luke 19",
+          "Honesty includes making amends.",
+          "Use pretend coins to demonstrate giving back what was taken unfairly."]
+      ]
+    },
+
+    {
+      title: "Faith That Takes Action",
+      goal: "Our actions can reflect our faith.",
+      stories: [
+        ["The Wise Builder Revisited","Matthew 7:24-27",
+          "Put teaching into action.",
+          "Build structures on different surfaces and test their stability gently."],
+
+        ["The Good Samaritan Revisited","Luke 10",
+          "Compassion means helping.",
+          "Act out everyday helping situations using cards."],
+
+        ["Rahab Acts with Courage","Joshua 2",
+          "Faith guides choices.",
+          "Make a paper city wall with a red cord and retell Rahab's decision."],
+
+        ["The Faithful Centurion","Matthew 8",
+          "Trust can lead to action.",
+          "Play a careful listening-and-following-directions challenge."]
+      ]
+    },
+
+    {
+      title: "Prayer and Worship",
+      goal: "Prayer and praise become daily habits.",
+      stories: [
+        ["David Writes Songs","Psalm 23",
+          "Worship remembers God's care.",
+          "Write a short group praise poem."],
+
+        ["Daniel Prays Daily","Daniel 6",
+          "Prayer is a habit.",
+          "Create a paper prayer calendar."],
+
+        ["Jesus in Gethsemane","Matthew 26",
+          "We can trust God.",
+          "Build a paper garden scene and discuss Jesus praying."],
+
+        ["Paul and Silas Worship","Acts 16",
+          "Praise is possible in hardship.",
+          "Make simple paper rhythm instruments for group worship."]
+      ]
+    },
+
+    {
+      title: "Sharing and Generosity",
+      goal: "We can share what we have.",
+      stories: [
+        ["Manna in the Wilderness","Exodus 16",
+          "God provides daily.",
+          "Collect paper manna pieces and discuss God's provision."],
+
+        ["The Widow's Oil","2 Kings 4",
+          "We can bring our needs to God.",
+          "Arrange paper jars and fill them with paper oil drops."],
+
+        ["Believers Share","Acts 4:32-37",
+          "Generosity builds community.",
+          "Complete a group project using shared supplies."],
+
+        ["Jesus Feeds the Crowd","John 6",
+          "Sharing starts with willingness.",
+          "Use paper food and baskets to demonstrate the boy's offering."]
+      ]
+    },
+
+    {
+      title: "Making Wise Decisions",
+      goal: "We can seek guidance before choosing.",
+      stories: [
+        ["Solomon Seeks Wisdom","1 Kings 3",
+          "Ask God for wisdom.",
+          "Make a decision wheel with everyday situations."],
+
+        ["Rehoboam's Decision","1 Kings 12",
+          "Wise advice matters.",
+          "Compare different advice cards and discuss which guidance is responsible."],
+
+        ["The Rich Young Ruler","Mark 10",
+          "Values guide decisions.",
+          "Create a priorities board showing faith, family, kindness, and possessions."],
+
+        ["Mary Chooses to Listen","Luke 10",
+          "Choose what matters most.",
+          "Play a focus-and-listening challenge."]
+      ]
+    },
+
+    {
+      title: "Hope and Perseverance",
+      goal: "We can keep trusting God.",
+      stories: [
+        ["Nehemiah Rebuilds","Nehemiah 2-6",
+          "Keep working faithfully.",
+          "Build and repair a wall of paper blocks."],
+
+        ["Job Holds On","Job 1-2; 42",
+          "We can bring questions to God.",
+          "Create a poster showing healthy ways to seek hope and comfort."],
+
+        ["The Persistent Widow","Luke 18",
+          "Keep praying.",
+          "Build a paper prayer chain representing persistence."],
+
+        ["Paul Finishes the Race","2 Timothy 4",
+          "Faithfulness matters.",
+          "Create a paper racetrack with milestones of faithful choices."]
+      ]
+    },
+
+    {
+      title: "Leadership Through Service",
+      goal: "Good leaders serve others.",
+      stories: [
+        ["Deborah Leads","Judges 4-5",
+          "Leadership uses courage.",
+          "Take turns guiding a collaborative classroom challenge."],
+
+        ["Moses Shares the Work","Exodus 18",
+          "Teamwork helps.",
+          "Complete a building project with assigned shared responsibilities."],
+
+        ["Jesus Washes Feet Again","John 13",
+          "Leaders serve.",
+          "Create a service pledge poster."],
+
+        ["Timothy Leads","1 Timothy 4:12",
+          "Young people can lead well.",
+          "Let everyone take a simple leadership role in a group activity."]
+      ]
+    },
+
+    {
+      title: "Shining Our Light",
+      goal: "Our actions show God's love.",
+      stories: [
+        ["Salt and Light","Matthew 5:13-16",
+          "Our actions can shine.",
+          "Make paper lanterns decorated with examples of kind actions."],
+
+        ["Philip and the Ethiopian","Acts 8",
+          "We can help others learn.",
+          "Hold a Bible storytelling circle where children share a remembered lesson."],
+
+        ["Peter Visits Cornelius","Acts 10",
+          "God welcomes different people.",
+          "Create a welcoming community mural."],
+
+        ["Jesus Sends His Friends","Matthew 28",
+          "We can share the good news.",
+          "Make a kindness mission map of places to encourage others."]
+      ]
+    },
+
+    {
+      title: "Growing Together in Christ",
+      goal: "Our journey of faith continues.",
+      stories: [
+        ["The First Church Grows","Acts 2",
+          "We grow together.",
+          "Create a church community tree showing ways to support one another."],
+
+        ["The Fruit of the Spirit","Galatians 5",
+          "God grows character in us.",
+          "Make a large paper fruit tree and label each fruit with a character quality."],
+
+        ["The Armor of God","Ephesians 6",
+          "God helps us stand firm.",
+          "Design a paper armor poster with the parts described in Ephesians."],
+
+        ["Love Never Fails","1 Corinthians 13",
+          "Love remains central.",
+          "Create a memory mural showing the most important lessons from the two-year journey."]
+      ]
+    }
+  ];
+
+  /* =====================================
+     QUARTERLY REVIEW LESSONS
+  ===================================== */
+
+  const reviewTitles = [
+    "Living God's Love Together",
+    "Practicing Courage and Prayer",
+    "Sharing Hope and Generosity",
+    "Celebrating the Gift of Jesus",
+    "Being a Faithful Friend",
+    "Worship in Everyday Life",
+    "Choosing Wisdom and Hope",
+    "A Life That Shines"
+  ];
+
+  const lessons = [];
+  let reviewNumber = 0;
+
+  themes.forEach(function(theme, index) {
+
+    const year = Math.floor(index / 12) + 1;
+    const month = index % 12 + 1;
+
+    theme.stories.forEach(function(story, i) {
+
+      lessons.push({
+        id: "y" + year + "m" + month + "w" + (i + 1),
+        year: year,
+        month: month,
+        week: i + 1,
+        theme: theme.title,
+        goal: theme.goal,
+        title: story[0],
+        passage: story[1],
+        point: story[2],
+        activity: story[3],
+        review: false
+      });
+
+    });
+
+    if (month % 3 === 0) {
+
+      const recent = themes.slice(index - 2, index + 1);
+
+      lessons.push({
+        id: "y" + year + "m" + month + "w5",
+        year: year,
+        month: month,
+        week: 5,
+        theme: theme.title,
+        goal: theme.goal,
+        title: reviewTitles[reviewNumber++],
+        passage: "Review of recent Bible passages",
+        point: "Remember and practice our lessons.",
+        activity:
+          "Create a Bible Journey Review Day using these stories: " +
+          recent.map(t => t.stories[0][0]).join(", ") +
+          ". Prepare story cards and let the children match " +
+          "the stories with their main lessons. End by making " +
+          "one group poster showing practical ways to apply them.",
+        review: true
+      });
+
+    }
+  });
+
+  /* =====================================
+     TRUEWAY KIDS LINKS
+  ===================================== */
+
+  const truewayLinks = {
+    "Zacchaeus Meets Jesus":
+      "https://truewaykids.com/zacchaeus/",
+
+    "Zacchaeus Makes Things Right":
+      "https://truewaykids.com/zacchaeus/",
+
+    "The Good Samaritan":
+      "https://truewaykids.com/good-samaritan/",
+
+    "The Good Samaritan Revisited":
+      "https://truewaykids.com/good-samaritan/"
+  };
+
+  const truewayHome = "https://truewaykids.com/";
+
+  /* =====================================
+     SAVED LESSON PROGRESS
+  ===================================== */
+
+  const storageKey = "lol-rlm-taught-v3";
+
+  let saved = {};
+
+  try {
+    saved = JSON.parse(
+      localStorage.getItem(storageKey) || "{}"
+    );
+
+    if (!saved || typeof saved !== "object" ||
+        Array.isArray(saved)) {
+      saved = {};
+    }
+  } catch (error) {
+    saved = {};
+  }
+
+  const yearSelect = document.getElementById("yearSelect");
+  const monthSelect = document.getElementById("monthSelect");
+  const lessonList = document.getElementById("lessonList");
+  const themeInfo = document.getElementById("themeInfo");
+  const nextLesson = document.getElementById("nextLesson");
+
+  function make(tag, className, text) {
+    const element = document.createElement(tag);
+
+    if (className) element.className = className;
+    if (text !== undefined) element.textContent = text;
+
+    return element;
+  }
+
+  function addHeading(parent, text) {
+    parent.appendChild(make("h4", "", text));
+  }
+
+  function addList(parent, entries, ordered) {
+    const list = document.createElement(
+      ordered ? "ol" : "ul"
+    );
+
+    entries.forEach(function(entry) {
+      list.appendChild(make("li", "", entry));
+    });
+
+    parent.appendChild(list);
+  }
+
+  function isTaught(id) {
+    return saved[id] === true;
+  }
+
+  function toggleTaught(id) {
+    saved[id] = !isTaught(id);
+
+    try {
+      localStorage.setItem(
+        storageKey,
+        JSON.stringify(saved)
+      );
+    } catch (error) {
+      console.warn("Unable to save progress.", error);
+    }
+
+    renderProgress();
+    renderNextLesson();
+    renderLessons(id);
+  }
+
+  /* =====================================
+     PROGRESS
+  ===================================== */
+
+  function renderProgress() {
+
+    const total = lessons.filter(
+      lesson => isTaught(lesson.id)
+    ).length;
+
+    const first = lessons.filter(
+      lesson =>
+        lesson.year === 1 &&
+        isTaught(lesson.id)
+    ).length;
+
+    const second = lessons.filter(
+      lesson =>
+        lesson.year === 2 &&
+        isTaught(lesson.id)
+    ).length;
+
+    document.getElementById("totalCount").textContent =
+      total + " / " + lessons.length;
+
+    document.getElementById("year1Count").textContent =
+      first + " / 52";
+
+    document.getElementById("year2Count").textContent =
+      second + " / 52";
+
+    document.getElementById("totalBar").style.width =
+      (total / lessons.length * 100) + "%";
+
+    document.getElementById("year1Bar").style.width =
+      (first / 52 * 100) + "%";
+
+    document.getElementById("year2Bar").style.width =
+      (second / 52 * 100) + "%";
+  }
+
+  /* =====================================
+     NEXT UNTaught LESSON
+  ===================================== */
+
+  function renderNextLesson() {
+
+    nextLesson.replaceChildren();
+
+    const upcoming = lessons.find(
+      lesson => !isTaught(lesson.id)
+    );
+
+    if (!upcoming) {
+      nextLesson.appendChild(
+        make("h3", "", "Curriculum Completed")
+      );
+
+      nextLesson.appendChild(
+        make("p", "", "All 104 lessons are marked as taught.")
+      );
+      return;
+    }
+
+    nextLesson.appendChild(
+      make(
+        "small", "",
+        "YEAR " + upcoming.year +
+        " / THEME " + upcoming.month +
+        " / LESSON " + upcoming.week
+      )
+    );
+
+    nextLesson.appendChild(
+      make("h3", "", upcoming.title)
+    );
+
+    nextLesson.appendChild(
+      make("p", "", upcoming.point)
+    );
+
+    const button = make(
+      "button", "primary-button",
+      "OPEN TEACHING PLAN"
+    );
+
+    button.type = "button";
+
+    button.addEventListener("click", function() {
+      yearSelect.value = upcoming.year;
+      updateMonths();
+      monthSelect.value = upcoming.month;
+      renderLessons(upcoming.id);
+
+      document.getElementById("curriculum")
+        .scrollIntoView({ behavior: "smooth" });
+    });
+
+    nextLesson.appendChild(button);
+  }
+
+  /* =====================================
+     MONTH SELECTOR
+  ===================================== */
+
+  function updateMonths() {
+
+    const year = Number(yearSelect.value);
+    monthSelect.replaceChildren();
+
+    themes.forEach(function(theme, index) {
+
+      if (Math.floor(index / 12) + 1 !== year) return;
+
+      const month = index % 12 + 1;
+
+      const option = document.createElement("option");
+      option.value = month;
+      option.textContent =
+        "Theme " + month + " - " + theme.title;
+
+      monthSelect.appendChild(option);
+    });
+  }
+
+  /* =====================================
+     TEACHING PLAN
+  ===================================== */
+
+  function teachingSteps(lesson, previous) {
+
+    return [
+      "Welcome the children and begin with an opening prayer.",
+
+      previous
+        ? "Review the previous lesson, '" + previous.title +
+          "'. Ask what the children remember and " +
+          "connect it to today's message."
+        : "Introduce the new Bible learning journey.",
+
+      "Introduce the theme '" + lesson.theme +
+      "' using an everyday question or situation.",
+
+      lesson.review
+        ? "Review stories from recent themes. Ask children " +
+          "to recall the people, important events, and messages."
+        : "Read " + lesson.passage +
+          ". Tell the story clearly and explain " +
+          "the people and important events.",
+
+      "Explain the main message: " + lesson.point,
+
+      "Discuss what happened in the story and " +
+        "why it matters in everyday life.",
+
+      "Lead the unique group activity and connect " +
+        "it to the Bible story.",
+
+      "Invite the children to choose one practical " +
+        "way to apply the lesson.",
+
+      "Summarize what the children learned " +
+        "and close with reflection and prayer."
+    ];
+  }
+
+  /* =====================================
+     LESSON CARD
+  ===================================== */
+
+  function createLesson(lesson, previous, following) {
+
+    const details = make("details", "lesson");
+    details.id = "lesson-" + lesson.id;
+
+    const summary = document.createElement("summary");
+    const row = make("div", "lesson-summary");
+    const info = document.createElement("div");
+
+    info.appendChild(make(
+      "small", "",
+      "YEAR " + lesson.year +
+      " / THEME " + lesson.month +
+      " / LESSON " + lesson.week
+    ));
+
+    info.appendChild(make("h3", "", lesson.title));
+    info.appendChild(make("p", "", lesson.passage));
+
+    row.appendChild(info);
+
+    row.appendChild(make(
+      "span",
+      "lesson-status" + (isTaught(lesson.id) ? " done" : ""),
+      isTaught(lesson.id) ? "TAUGHT" : "NOT YET TAUGHT"
+    ));
+
+    summary.appendChild(row);
+    details.appendChild(summary);
+
+    const content = make("div", "lesson-content");
+
+    addHeading(content, "Learning Objective");
+    content.appendChild(make("p", "", lesson.point));
+
+    addHeading(content, "Connection to Previous Lesson");
+
+    content.appendChild(make(
+      "p", "",
+      previous
+        ? "Previously: " + previous.title + ". " +
+          previous.point + " Today's lesson explores: " +
+          lesson.point
+        : "This is the beginning of our connected Bible journey."
+    ));
+
+    addHeading(content, "Teaching Execution");
+    addList(content, teachingSteps(lesson, previous), true);
+
+    addHeading(content, "Discussion Questions");
+    addList(content, [
+      "What happened in the story of " + lesson.title + "?",
+      "What choices did the people in the story make?",
+      "What does this story teach us about God or how we live?",
+      "How can we practice today's message this week?"
+    ], false);
+
+    addHeading(content, "Group Learning Activity");
+
+    content.appendChild(make(
+      "p", "", lesson.activity
+    ));
+
+    addHeading(content, "Practical Application");
+
+    content.appendChild(make(
+      "p", "",
+      "Invite every child to choose one action " +
+      "this week that demonstrates: " + lesson.point
+    ));
+
+    addHeading(content, "Reflection and Closing Prayer");
+
+    content.appendChild(make(
+      "p", "",
+      "Ask children to share what they learned, " +
+      "summarize the central message, " +
+      "and close with a prayer related to the story."
+    ));
+
+    if (following) {
+      addHeading(content, "What Comes Next");
+
+      content.appendChild(make(
+        "p", "",
+        "Next lesson: " + following.title +
+        ". " + following.point
+      ));
+    }
+
+    content.appendChild(make(
+      "div", "lesson-note",
+      "This plan uses one shared activity for all children. " +
+      "Teachers can adapt the presentation to the group. " +
+      "There are no time allocations or teacher checklists."
+    ));
+
+    const actions = make("div", "lesson-actions");
+
+    const taughtButton = make(
+      "button",
+      "primary-button",
+      isTaught(lesson.id)
+        ? "MARK AS NOT TAUGHT"
+        : "MARK AS TAUGHT"
+    );
+
+    taughtButton.type = "button";
+
+    taughtButton.addEventListener("click", function() {
+      toggleTaught(lesson.id);
+    });
+
+    actions.appendChild(taughtButton);
+
+    const directLink = truewayLinks[lesson.title];
+
+    const resourceLink = make(
+      "a", "secondary-button",
+      directLink
+        ? "OPEN TRUEWAY KIDS LESSON"
+        : "BROWSE TRUEWAY KIDS RESOURCES"
+    );
+
+    resourceLink.href = directLink || truewayHome;
+    resourceLink.target = "_blank";
+    resourceLink.rel = "noopener noreferrer";
+
+    actions.appendChild(resourceLink);
+    content.appendChild(actions);
+    details.appendChild(content);
+
+    return details;
+  }
+
+  /* =====================================
+     RENDER LESSONS
+  ===================================== */
+
+  function renderLessons(openId) {
+
+    lessonList.replaceChildren();
+    themeInfo.replaceChildren();
+
+    const year = Number(yearSelect.value);
+    const month = Number(monthSelect.value);
+    const theme = themes[(year - 1) * 12 + month - 1];
+
+    if (!theme) return;
+
+    const heading = make("div", "theme-heading");
+
+    heading.appendChild(make(
+      "small", "",
+      "YEAR " + year + " / THEME " + month
+    ));
+
+    heading.appendChild(make("h3", "", theme.title));
+    heading.appendChild(make("p", "", theme.goal));
+    themeInfo.appendChild(heading);
+
+    lessons.filter(
+      lesson =>
+        lesson.year === year &&
+        lesson.month === month
+    ).forEach(function(lesson) {
+
+      const index = lessons.findIndex(
+        entry => entry.id === lesson.id
+      );
+
+      const previous = index > 0 ? lessons[index - 1] : null;
+
+      const following = index < lessons.length - 1
+        ? lessons[index + 1]
+        : null;
+
+      const card = createLesson(
+        lesson, previous, following
+      );
+
+      if (lesson.id === openId) card.open = true;
+
+      lessonList.appendChild(card);
+    });
+  }
+
+  /* =====================================
+     PREVIOUS / NEXT THEME
+  ===================================== */
+
+  function changeTheme(amount) {
+
+    const year = Number(yearSelect.value);
+    const month = Number(monthSelect.value);
+
+    let index = (year - 1) * 12 + month - 1;
+
+    index = Math.max(
+      0, Math.min(23, index + amount)
+    );
+
+    yearSelect.value = Math.floor(index / 12) + 1;
+    updateMonths();
+    monthSelect.value = index % 12 + 1;
+    renderLessons();
+  }
+
+  yearSelect.addEventListener("change", function() {
+    updateMonths();
+    renderLessons();
+  });
+
+  monthSelect.addEventListener("change", function() {
+    renderLessons();
+  });
+
+  document.getElementById("previous")
+    .addEventListener("click", function() {
+      changeTheme(-1);
+    });
+
+  document.getElementById("next")
+    .addEventListener("click", function() {
+      changeTheme(1);
+    });
+
+  /* START */
+
+  updateMonths();
+  renderLessons();
+  renderProgress();
+  renderNextLesson();
+
+})();
+</script>
+
+</body>
+</html>
